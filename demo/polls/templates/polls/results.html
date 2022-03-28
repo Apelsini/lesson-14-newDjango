@@ -1,0 +1,12 @@
+{{ question }}
+{% if choices %}
+<ul>
+    {% for choice in choices %}
+        <li>
+            <a href="{% url 'polls:vote' choice.id %}">{{ choice.choice_text }}<a> <span> {{ choice.votes }} </span>
+        </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No choices avaliable.</p>
+{% endif %}
